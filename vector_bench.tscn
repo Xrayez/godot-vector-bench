@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://vector_bench.gd" type="Script" id=1]
+[ext_resource path="res://segment.gd" type="Script" id=2]
+
+[node name="vector_bench" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+operation = 1
+
+[node name="vec" type="Node2D" parent="."]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+color = Color( 1, 0, 0, 1 )
+width = 3.0
+
+[node name="a" type="Node2D" parent="vec"]
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="b" type="Node2D" parent="vec"]
+position = Vector2( 266.347, -201.027 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="vec_param" type="Node2D" parent="."]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+color = Color( 0.054902, 1, 0, 1 )
+width = 3.0
+
+[node name="a" type="Node2D" parent="vec_param"]
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="b" type="Node2D" parent="vec_param"]
+position = Vector2( -260, -5.96046e-008 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="vec_result" type="Node2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+color = Color( 0, 0.623529, 1, 1 )
+width = 3.0
+
+[node name="a" type="Node2D" parent="vec_result"]
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="b" type="Node2D" parent="vec_result"]
+position = Vector2( -266.347, -201.027 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="help" type="Label" parent="."]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 26.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 328.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Welcome to the Vector Bench!
+
+This project is intended to reveal mysterious operations that can be performed on `Vector2` structure.
+
+1. Select `vector_bench` in the scene tree and choose an operation you'd like to experiment with.
+
+2. Move `vec` and `vec_param` endpoints (`b` nodes) to construct the desired \"vector pose\".
+
+3. The resulting vector `vec_result` will be automatically calculated and displayed in the editor.
+
+Note that in order to perform some of the operations the `vec_param` needs to be normalized (which is done automatically here)."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
