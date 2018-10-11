@@ -43,16 +43,17 @@ __meta__ = {
 }
 
 [node name="b" type="Node2D" parent="vec_param"]
-position = Vector2( -114.211, 3.15787 )
+position = Vector2( -110, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="vec_result" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 color = Color( 0, 0.623529, 1, 1 )
-width = 5.0
+width = 3.0
 
 [node name="a" type="Node2D" parent="vec_result"]
 _sections_unfolded = [ "Transform" ]
@@ -61,11 +62,10 @@ __meta__ = {
 }
 
 [node name="b" type="Node2D" parent="vec_result"]
-position = Vector2( -69.6797, -95.5332 )
+position = Vector2( -64.2944, -99.2375 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="help" type="Label" parent="."]
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
