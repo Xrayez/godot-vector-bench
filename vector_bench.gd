@@ -25,6 +25,9 @@ func _process(_delta):
 	var vec_result = result.global_position
 
 	match operation:
+		VectorOperation.OP_NONE:
+			vec_result = Vector2()
+
 		VectorOperation.OP_BOUNCE:
 			vec_result = vec.bounce(vec_param.normalized())
 
@@ -42,5 +45,11 @@ func _process(_delta):
 
 		VectorOperation.OP_TANGENT:
 			vec_result = vec.tangent()
+
+	var dot = vec.normalized().dot(vec_param.normalized())
+	$info/dot.text = str(dot)
+
+	var cross = vec.normalized().cross(vec_param.normalized())
+	$info/cross.text = str(cross)
 
 	result.global_position = vec_result

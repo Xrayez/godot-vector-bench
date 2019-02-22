@@ -8,7 +8,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-operation = 4
+operation = 1
 
 [node name="vec" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -23,7 +23,7 @@ __meta__ = {
 }
 
 [node name="a" type="Node2D" parent="vec"]
-position = Vector2( 70.8172, -0.495811 )
+position = Vector2( -63.0406, -71.6787 )
 
 [node name="vec_param" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -39,9 +39,10 @@ __meta__ = {
 }
 
 [node name="b" type="Node2D" parent="vec_param"]
-position = Vector2( 42.704, 29.4964 )
+position = Vector2( -66.0485, -0.660164 )
 
 [node name="vec_result" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -55,10 +56,43 @@ __meta__ = {
 }
 
 [node name="result" type="Node2D" parent="vec_result"]
-position = Vector2( 23.1053, -33.4512 )
+position = Vector2( 64.4607, -70.4043 )
+
+[node name="info" type="VBoxContainer" parent="."]
+editor/display_folded = true
+margin_left = -163.756
+margin_top = 11.2935
+margin_right = -83.7561
+margin_bottom = 51.2935
+
+[node name="dot_product" type="Label" parent="info"]
+margin_right = 88.0
+margin_bottom = 14.0
+text = "Dot product"
+
+[node name="dot" type="LineEdit" parent="info"]
+margin_top = 18.0
+margin_right = 88.0
+margin_bottom = 42.0
+text = "0.667884"
+editable = false
+context_menu_enabled = false
+
+[node name="cross_product" type="Label" parent="info"]
+margin_top = 46.0
+margin_right = 88.0
+margin_bottom = 60.0
+text = "Cross product"
+
+[node name="cross" type="LineEdit" parent="info"]
+margin_top = 64.0
+margin_right = 88.0
+margin_bottom = 88.0
+text = "-0.744266"
+editable = false
+context_menu_enabled = false
 
 [node name="help" type="Label" parent="."]
-visible = false
 margin_left = 26.0
 margin_top = 25.0
 margin_right = 495.0
