@@ -1,5 +1,5 @@
-tool
 extends Node2D
+tool
 
 enum VectorOperation {
 	OP_NONE,
@@ -11,32 +11,36 @@ enum VectorOperation {
 	OP_TANGENT
 }
 
-export (VectorOperation) var operation = OP_NONE
+export (VectorOperation) var operation = VectorOperation.OP_NONE
 
 
-func _process(delta):
-	
-	var vec = $vec/b.global_position
-	var vec_param = $vec_param/b.global_position
-	var vec_result = $vec_result/b.global_position
-	
+func _process(_delta):
+
+	var a = $vec.get_child(1)
+	var b = $vec_param.get_child(1)
+	var result = $vec_result.get_child(1)
+
+	var vec = a.global_position
+	var vec_param = b.global_position
+	var vec_result = result.global_position
+
 	match operation:
-		OP_BOUNCE:
+		VectorOperation.OP_BOUNCE:
 			vec_result = vec.bounce(vec_param.normalized())
-			
-		OP_PROJECT:
+
+		VectorOperation.OP_PROJECT:
 			vec_result = vec.project(vec_param)
-			
-		OP_REFLECT:
+
+		VectorOperation.OP_REFLECT:
 			vec_result = vec.reflect(vec_param.normalized())
-			
-		OP_SLIDE:
+
+		VectorOperation.OP_SLIDE:
 			vec_result = vec.slide(vec_param.normalized())
-			
-		OP_SNAPPED:
+
+		VectorOperation.OP_SNAPPED:
 			vec_result = vec.snapped(vec_param)
-			
-		OP_TANGENT:
+
+		VectorOperation.OP_TANGENT:
 			vec_result = vec.tangent()
-	
-	$vec_result/b.global_position = vec_result
+
+	result.global_position = vec_result
